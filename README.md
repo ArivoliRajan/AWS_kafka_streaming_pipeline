@@ -6,10 +6,6 @@ Kafka topic. The same topic can be inspected by a local Python consumer or read
 by an AWS Glue Spark streaming session, which parses the JSON events and writes  
 partitioned Parquet files to Amazon S3.
 
-> \[!IMPORTANT\]  
-> This repository is a learning/demo project, not a deployment-ready production  
-> system. Read **Security warning** and **Known gaps** before running it.
-
 ## Demo video
 
 [![Watch the AWS Kafka Streaming Demo](https://i.ytimg.com/vi/J-rmk5qVtUQ/hqdefault.jpg)](https://youtu.be/J-rmk5qVtUQ)
