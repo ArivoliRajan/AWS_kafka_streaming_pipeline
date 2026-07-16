@@ -404,13 +404,5 @@ you finish. Remove demonstration data and AWS resources deliberately to avoid
 continued storage or compute charges. If you later make the Terraform  
 configuration valid and use it to manage the stack, inspect its state and plan  
 before cleanup; remember that the declared S3 bucket permits forced deletion.
-
-## Source and accuracy note
-
-This README was derived from every tracked file on the repository's `main`  
-branch at commit `9f6dd3372c35976910b4773e16008be9086190ce`, its two-commit history, the  
-linked video's YouTube metadata, and a visual/audio analysis of the demo. The  
-video has no caption track available through the transcript endpoint, so no  
-claims are attributed to a transcript. Repository code is treated as canonical  
-where the demo and current branch differ. Sensitive credential values were  
+nt branch differ. Sensitive credential values were  
 intentionally omitted.
