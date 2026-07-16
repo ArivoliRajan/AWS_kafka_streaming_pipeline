@@ -359,43 +359,6 @@ specified by this repository, and `force_destroy = true` allows Terraform to
 delete the bucket even when it contains objects. Destroying the stack would use  
 `terraform destroy` and can remove stored data.
 
-## Video-to-repository differences
-
-The video metadata and visible demo support the same overall architecture as  
-the repository: synthetic producer → Confluent Cloud topic → local consumer  
-and AWS Glue consumer → partitioned Parquet in S3. Some visible demo settings  
-do not match the checked-in `main` branch:
-
-| Area | Video demo | Current repository |
-| --- | --- | --- |
-| S3 output prefix | `demo-orders/` is shown | Notebook code uses `notebook-orders/` |
-| Micro-batch trigger | 20 seconds is shown | Notebook code uses 30 seconds |
-| Data Catalog | Mentioned/shown as an example destination | Final cell is placeholder code and is not wired to the streaming DataFrame |
-
-Use the current repository values when maintaining or running this branch.
-
-## Known gaps
-
--   **Exposed credentials:** Kafka credentials are committed in notebook code and  
-    must be revoked, removed, and replaced safely.
--   **Broken Terraform source reference:** `terraform/main.tf` requires the absent  
-    `streaming_pipeline.py`.
--   **Notebook/job mismatch:** the notebook requests Glue 5.1 with five workers,  
-    while Terraform declares a Glue 5.0 job with two workers and a Python script  
-    entry point.
--   **Hardcoded infrastructure values:** broker, topic, credentials, bucket paths,  
-    and JAR paths are embedded in notebook cells. Only the producer supports  
-    environment overrides.
--   **Potential consumer error-path bug:** `KafkaException` is referenced but not  
-    imported.
--   **No Kafka provisioning:** the Confluent environment, cluster, topic, service  
-    account, ACLs, and credentials are external prerequisites.
--   **No working catalog integration:** the Data Catalog example uses placeholders  
-    and an undefined `DyF`.
--   **No automated validation:** no tests or CI workflow are committed.
--   **No dependency lock:** Python packages are unpinned, and no requirements file  
-    is present.
--   **No license:** the repository does not state reuse or redistribution terms.
 
 ## Cleanup
 
