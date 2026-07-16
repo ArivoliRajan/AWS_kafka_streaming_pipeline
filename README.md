@@ -1,20 +1,3 @@
-
-Gemini
-New chat
-Search chats
-Daily brief
-Images
-New
-Videos
-Library
-New notebook
-create me a Readme file for a github repository based on this video with architectural diagrams and workflows
-STEM Fair Poster Template Assistance
-Convert Screenshot to Google Doc
-Add Alien To Photo
-Conversation with Gemini
-create me a Readme file for a github repository based on this video with architectural diagrams and workflows
-
 Project Components
 1. Data Producer
 A Python-based producer that generates synthetic order events continuously. The events simulate an e-commerce storefront and include details such as order_id, customer_id, product, quantity, price, and order_timestamp. These events are published in real-time to a managed Kafka cluster.
