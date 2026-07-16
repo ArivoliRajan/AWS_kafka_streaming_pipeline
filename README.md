@@ -13,9 +13,7 @@ partitioned Parquet files to Amazon S3.
 The linked video demonstrates the producer, Confluent Cloud topic, local  
 consumer, AWS Glue streaming ETL, and date-partitioned Parquet output in S3.  
 Where the video and the current repository differ, this README treats the  
-repository's `main` branch as the canonical implementation. See  
-[Video-to-repository differences](#video-to-repository-differences).
-
+repository's `main` branch as the canonical implementation. 
 ## What this project demonstrates
 
 -   Generating fake order records with `Faker` in  
@@ -37,8 +35,7 @@ repository's `main` branch as the canonical implementation. See
 
 The solid arrows below represent the runtime paths implemented in the  
 notebooks. Dashed arrows show infrastructure that the Terraform configuration  
-_intends_ to create; the current Terraform path is blocked by a missing file,  
-as explained under [Known gaps](#known-gaps).
+_intends_ to create.
 
 ```mermaid
 flowchart LR
