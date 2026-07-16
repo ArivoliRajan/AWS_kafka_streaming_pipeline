@@ -1,3 +1,11 @@
+This demo showcases a real-time Kafka Streaming Pipeline that continuously processes streaming order events using a managed Kafka cluster that runs Confluent Cloud.
+Consumer runs in two environments:
+1. Local Consumer: Runs locally to pull and monitor raw order events directly from Confluent Cloud.
+
+2. Cloud Streaming ETL (Consumer): Runs on AWS Glue, spinning up a Spark cluster to apply a schema to the incoming event stream. The stores the dataset to Amazon S3 bucket in Parquet format as micro-batches, partitioned dynamically by order_date.
+
+https://youtu.be/J-rmk5qVtUQ
+
 Project Components
 1. Data Producer
 A Python-based producer that generates synthetic order events continuously. The events simulate an e-commerce storefront and include details such as order_id, customer_id, product, quantity, price, and order_timestamp. These events are published in real-time to a managed Kafka cluster.
